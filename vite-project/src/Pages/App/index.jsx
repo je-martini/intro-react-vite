@@ -6,6 +6,7 @@ import { MyOrder } from "../MyOrder"
 import { MyOrders } from "../MyOrders/inde"
 import { NotFound } from "../NotFound"
 import { SignIn } from "../SignIn"
+import { Navbar } from '../../Components/Navbar'
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -29,6 +30,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Navbar />
     </BrowserRouter>
    
   )
