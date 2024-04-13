@@ -9,7 +9,9 @@ const Card = (data) => {
 
     
     return(
-        <div className="bg-white cursor-pointer w-56 h-60">
+        <div 
+        onClick={() => context.openProductDetail()}
+        className="bg-white cursor-pointer w-56 h-60">
             <figure className="relative mb-2 w-full h-4/5">
                 <span className="
                 absolute bottom-0 left-0 bg-white/60 rounded-lg
