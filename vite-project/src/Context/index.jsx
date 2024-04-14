@@ -16,6 +16,9 @@ const ShoppingCartProvider = ({children}) => {
     // Showing Product Detail
     const [ProductToShow, setProductToShow] = useState({})
 
+    // Showing Cart Add Products to cart
+    const [productsInCart, setProductsInCart] = useState([])
+
 
     return(
         <ShoppingCartContext.Provider
@@ -26,7 +29,9 @@ const ShoppingCartProvider = ({children}) => {
                 openProductDetail,
                 CloseProductDetail,
                 ProductToShow,
-                setProductToShow
+                setProductToShow,
+                productsInCart,    
+                setProductsInCart
             }}
         >
             {children}
