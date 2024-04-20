@@ -13,7 +13,7 @@ const ProductDetail = () => {
     return (
     <aside className={`
     ${ context.isProductDetailOpen ? "flex" : "hidden" }
-    product-detail flex flex-col fixed 
+    checkout-side-menu flex flex-col fixed 
     right-8 border border-black rounded-lg bg-white`
     }>
 
