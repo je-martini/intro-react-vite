@@ -9,6 +9,12 @@ const CheckoutSideMenu = () => {
 
     const context = useContext(ShoppingCartContext)
 
+    const handleDelete = (id) => {
+        const filteredProducts = context.productsInCart.filter(product => product.id != id)
+        context.setProductsInCart(filteredProducts)
+        
+    }
+
     return (
     <aside className={`
         ${ context.isCheckoutSideMenuOpen ? "flex" : "hidden" }
@@ -32,10 +38,12 @@ const CheckoutSideMenu = () => {
         {
             context.productsInCart.map(product => (
                 <OrderCard
+                    id={product.id}
                     key={product.id}
                     title={product.title}
                     imageURL={product.images}
                     price={product.price}
+                    handleDelete={handleDelete}
                 />
             ))
         }

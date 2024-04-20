@@ -17,7 +17,7 @@ const Card = (data) => {
         context.setCount(context.count + 1)
         context.setProductsInCart([...context.productsInCart, productData])
         context.openCheckoutSideMenu()
-        console.log("cart: ", context.productsInCart)
+        
     }
 
     const renderIcon = (id) => {
