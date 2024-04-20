@@ -28,7 +28,7 @@ const CheckoutSideMenu = () => {
             </XMarkIcon>
     </div>
 
-    <div  className="px-6 mt-6">
+    <div  className="px-6 mt-6 overflow-y-scroll">
         {
             context.productsInCart.map(product => (
                 <OrderCard

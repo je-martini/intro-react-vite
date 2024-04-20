@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { ShoppingCartContext } from "../../Context"
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/solid'
 
 
 const Card = (data) => {
@@ -18,6 +18,42 @@ const Card = (data) => {
         context.setProductsInCart([...context.productsInCart, productData])
         context.openCheckoutSideMenu()
         console.log("cart: ", context.productsInCart)
+    }
+
+    const renderIcon = (id) => {
+        const isInCart = context.productsInCart.
+            filter(product => product.id === id).length > 0 
+        
+        if(isInCart){
+            return(
+                <div
+                    className="
+                    absolute top-0 right-0 flex 
+                    justify-center items-center bg-black 
+                    rounded-full m-2"
+                    >
+                    <CheckIcon 
+                        className="h-6 w-6 text-white"
+                    ></CheckIcon>
+                </div>
+            )
+        }else{
+            return(
+                <div
+                    className="
+                    absolute top-0 right-0 flex 
+                    justify-center items-center bg-white 
+                    rounded-full m-2"
+                    onClick={ (event) => addProductsToCart(event, data.data)}
+                    >
+                    <PlusIcon 
+                        className="h-6 w-6"
+                    ></PlusIcon>
+                </div>
+            )
+        }
+        
+        
     }
     
     return(
@@ -39,14 +75,7 @@ const Card = (data) => {
                  alt={data.data.title} 
                 />
 
-                <div 
-                className="absolute top-0 right-0 flex 
-                justify-center items-center bg-white 
-                rounded-full m-2"
-                onClick={ (event) => addProductsToCart(event, data.data)}
-                >
-                <PlusIcon className="h-6 w-6"></PlusIcon>
-                </div>
+                {renderIcon(data.data.id)}
             </figure>
             <p className="flex justify-between">
                 <span className="text-sm font-light">
