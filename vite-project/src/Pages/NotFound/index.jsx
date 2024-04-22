@@ -1,4 +1,4 @@
-import { Layout } from "../../Components/Layout"
+import Layout from "../../Components/Layout"
 
 function NotFound() {
 
@@ -10,5 +10,5 @@ function NotFound() {
     )
   }
   
-  export { NotFound }
+  export default NotFound
   

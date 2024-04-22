@@ -1,4 +1,4 @@
-import { Layout } from "../../Components/Layout"
+import  Layout  from "../../Components/Layout"
 
 function MyAccount() {
 
@@ -10,5 +10,5 @@ function MyAccount() {
     )
   }
   
-  export { MyAccount }
+export default MyAccount 
   

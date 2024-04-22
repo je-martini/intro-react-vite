@@ -1,4 +1,4 @@
-import { Layout } from "../../Components/Layout"
+import Layout from "../../Components/Layout"
 
 function SignIn() {
 
@@ -10,5 +10,5 @@ function SignIn() {
     )
   }
   
-  export { SignIn }
+  export default SignIn
   
