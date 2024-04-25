@@ -8,6 +8,7 @@ import MyOrders from "../MyOrders/inde"
 import NotFound from "../NotFound"
 import SignIn from "../SignIn"
 import Navbar from '../../Components/Navbar'
+
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
 
 const AppRoutes = () => {

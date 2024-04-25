@@ -59,7 +59,7 @@ const Card = (data) => {
     return(
         <div 
         onClick={() => showProduct(data.data)}
-        className="bg-white cursor-pointer w-56 h-60">
+        className=" bg-slate-700 cursor-pointer w-56 h-60">
             <figure className="relative mb-2 w-full h-4/5">
                 <span className="
                 absolute bottom-0 left-0 bg-white/60 rounded-lg
