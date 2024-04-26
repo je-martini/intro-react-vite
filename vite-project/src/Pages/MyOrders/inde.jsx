@@ -16,7 +16,7 @@ function MyOrders() {
             <Link to='/my-orders' className="absolute left-0">
             <ChevronLeftIcon className="h-6 w-6 text-white cursor-pointer"/>
             </Link>
-            <h1>My Orders</h1>
+            <h1 className="font-medium text-xl mb-4">My Orders</h1>
           </div>
           {
             context.order.map( (order, index) => (
@@ -24,7 +24,7 @@ function MyOrders() {
               <Link key={index} to={`/my-orders/${index}`}>
                 <OrdersCard 
                   totalPrice={order.totalPrice} 
-                  totalProducts={order.totalPrice}
+                  totalProducts={order.totalProducts}
                 />
               </Link>
             ))
