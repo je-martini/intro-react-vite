@@ -4,12 +4,12 @@ import Card  from "../../Components/Card"
 import { ProductDetail } from "../../Components/ProductDetail"
 import { ShoppingCartContext } from "../../Context"
 
-function Home() {
+function Others() {
   
   const context = useContext(ShoppingCartContext)
   
   const renderView = () => {
-    if(context.searchByTitle?.length > 0) {
+    if(context.searchByCategory?.length > 0) {
      
       if(context.filteredItems?.length > 0) {
         return (
@@ -20,7 +20,7 @@ function Home() {
         )
       } else {
         return(
-          <div>Sorry by now it's not avalible</div>
+          <div>Sorry by now it's not any Electronics avalible</div>
         )
       }
 
@@ -60,4 +60,4 @@ function Home() {
   )
 }
 
-export default Home 
+export default Others 
