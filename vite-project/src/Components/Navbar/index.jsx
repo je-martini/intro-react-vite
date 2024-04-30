@@ -15,13 +15,16 @@ const Navbar = () => {
         <ul className="flex item-center gap-3">
             <li className="font-semibold text-lg">
                 <NavLink
-                to='/'>               
+                to='/'
+                onClick={ () => context.setSearchByCategory()}
+                >               
                     Shopi
                 </NavLink>
             </li>
             <li>
                 <NavLink
                 to='/'
+                onClick={ () => context.setSearchByCategory()}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
                 }>
@@ -113,7 +116,7 @@ const Navbar = () => {
             <li className="flex item-center">
                 <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
                 <div>
-                    {context.count}
+                    {context.productsInCart.length}
                 </div>
             </li>
             
