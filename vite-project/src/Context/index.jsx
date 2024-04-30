@@ -34,6 +34,9 @@ const ShoppingCartProvider = ({children}) => {
     // Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null)
     
+    // Get Products By Category
+    const [searchByCategory, setSearchByCategory] = useState(null)
+
 
     useEffect( () =>{
         fetch('https://api.escuelajs.co/api/v1/products/')
@@ -46,9 +49,18 @@ const ShoppingCartProvider = ({children}) => {
         return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase() ))
     }
 
+    const filteredItemsByCategory = (items, searchByCategory) => {
+        return items?.filter(item => item.category.name.toLowerCase().includes(searchByCategory.toLowerCase() ))
+    }
+
     useEffect(() => {
         if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-    }, [items, searchByTitle])
+        if(searchByCategory) setFilteredItems(filteredItemsByCategory(items, searchByCategory))
+
+    }, [items, searchByTitle, searchByCategory])
+
+    console.log("filteredItems: ", filteredItems)
+    console.log("searchByCategory: ", searchByCategory)
 
     
 
@@ -74,7 +86,9 @@ const ShoppingCartProvider = ({children}) => {
                 searchByTitle,
                 setSearchByTitle,
                 filteredItems,   
-                setFilteredItems
+                setFilteredItems,
+                searchByCategory, 
+                setSearchByCategory
             }}
         >
             {children}
