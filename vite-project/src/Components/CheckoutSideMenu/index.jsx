@@ -73,7 +73,7 @@ const CheckoutSideMenu = () => {
             <span className="font-light">Total :</span>
             <span className="font-medium text-xl">${totalPrice(context.productsInCart)}</span>
         </p>
-        <Link to="/my-orders/last">
+        <Link to="/intro-react-vite/my-orders/last">
             <button
                 className="w-full bg-black py-3 text-white rounded-lg"
                 onClick={() => handleCheckout()}

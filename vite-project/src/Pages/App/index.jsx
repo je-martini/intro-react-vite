@@ -13,19 +13,19 @@ import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: '/', element: <Home />},
-    { path: '/clothes', element: <Home />},
-    { path: '/electronics', element: <Home />},
-    { path: '/furnitures', element: <Home />},
-    { path: '/toys', element: <Home />},
-    { path: '/others', element: <Home />},
-    { path: '/my-account', element: <MyAccount />},
-    { path: '/my-order', element: <MyOrder />},
-    { path: '/my-orders', element: <MyOrders />},
-    { path: '/my-orders/last', element: <MyOrder />},
-    { path: '/my-orders/:id', element: <MyOrder />},
-    { path: '/sign-in', element: <SignIn />},
-    { path: '/*', element: <NotFound />},
+    { path: '/intro-react-vite/', element: <Home />},
+    { path: '/intro-react-vite/clothes', element: <Home />},
+    { path: '/intro-react-vite/electronics', element: <Home />},
+    { path: '/intro-react-vite/furnitures', element: <Home />},
+    { path: '/intro-react-vite/toys', element: <Home />},
+    { path: '/intro-react-vite/others', element: <Home />},
+    { path: '/intro-react-vite/my-account', element: <MyAccount />},
+    { path: '/intro-react-vite/my-order', element: <MyOrder />},
+    { path: '/intro-react-vite/my-orders', element: <MyOrders />},
+    { path: '/intro-react-vite/my-orders/last', element: <MyOrder />},
+    { path: '/intro-react-vite/my-orders/:id', element: <MyOrder />},
+    { path: '/intro-react-vite/sign-in', element: <SignIn />},
+    { path: '/intro-react-vite/*', element: <NotFound />},
 
 
   ])

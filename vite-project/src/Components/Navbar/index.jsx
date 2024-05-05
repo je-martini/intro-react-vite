@@ -11,11 +11,11 @@ const Navbar = () => {
     
 
     return (
-      <nav className="flex justify-between item-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light  bg-slate-700">
+      <nav className="flex justify-between item-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light border bg-red-300">
         <ul className="flex item-center gap-3">
             <li className="font-semibold text-lg">
                 <NavLink
-                to='/'
+                to='/intro-react-vite/'
                 onClick={ () => context.setSearchByCategory()}
                 >               
                     Shopi
@@ -23,7 +23,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/'
+                to='/intro-react-vite/'
                 onClick={ () => context.setSearchByCategory()}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/clothes'
+                to='/intro-react-vite/clothes'
                 onClick={ () => context.setSearchByCategory('Ropa')}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -43,7 +43,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/electronics'
+                to='/intro-react-vite/electronics'
                 onClick={ () => context.setSearchByCategory('electronics')}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -53,7 +53,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/furnitures'
+                to='/intro-react-vite/furnitures'
                 onClick={ () => context.setSearchByCategory('Change title')}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -63,7 +63,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/toys'
+                to='/intro-react-vite/toys'
                 onClick={ () => context.setSearchByCategory('Miscellaneous')}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -73,7 +73,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/others'
+                to='/intro-react-vite/others'
                 onClick={ () => context.setSearchByCategory('shoes')}
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
@@ -88,7 +88,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/my-orders'
+                to='/intro-react-vite/my-orders'
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
                 }>
@@ -97,7 +97,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/my-account'
+                to='/intro-react-vite/my-account'
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
                 }>
@@ -106,7 +106,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                to='/sign-in'
+                to='/intro-react-vite/sign-in'
                 className = { ({ isActive }) => 
                 isActive ? activeStyle : undefined
                 }>

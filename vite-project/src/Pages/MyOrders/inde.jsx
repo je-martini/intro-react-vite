@@ -13,7 +13,7 @@ function MyOrders() {
       <Layout>
         
           <div className="flex w-80 items-center justify-center relative">
-            <Link to='/my-orders' className="absolute left-0">
+            <Link to='/intro-react-vite/my-orders' className="absolute left-0">
             <ChevronLeftIcon className="h-6 w-6 text-white cursor-pointer"/>
             </Link>
             <h1 className="font-medium text-xl mb-4">My Orders</h1>
@@ -21,7 +21,7 @@ function MyOrders() {
           {
             context.order.map( (order, index) => (
 
-              <Link key={index} to={`/my-orders/${index}`}>
+              <Link key={index} to={`/intro-react-vite/my-orders/${index}`}>
                 <OrdersCard 
                   totalPrice={order.totalPrice} 
                   totalProducts={order.totalProducts}
