@@ -8,12 +8,6 @@ function SignUp() {
 
   const context = useContext(ShoppingCartContext)
 
-    // const getInfo = () => {
-    //   const accountName = document.getElementById("accountName")
-    //   const accountEmail = document.getElementById("accountEmail")
-    //   const accountPassword = document.getElementById("accountPassword")
-    //   console.log(accountName.value)
-    // }
 
     return (
       <Layout>
