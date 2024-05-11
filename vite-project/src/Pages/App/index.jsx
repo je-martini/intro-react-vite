@@ -7,6 +7,7 @@ import MyOrder from "../MyOrder"
 import MyOrders from "../MyOrders/inde"
 import NotFound from "../NotFound"
 import SignIn from "../SignIn"
+import SignUp from '../SignUp'
 import Navbar from '../../Components/Navbar'
 
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
@@ -25,6 +26,7 @@ const AppRoutes = () => {
     { path: '/intro-react-vite/my-orders/last', element: <MyOrder />},
     { path: '/intro-react-vite/my-orders/:id', element: <MyOrder />},
     { path: '/intro-react-vite/sign-in', element: <SignIn />},
+    { path: '/intro-react-vite/sign-up', element: <SignUp />},
     { path: '/intro-react-vite/*', element: <NotFound />},
 
 
