@@ -1,8 +1,17 @@
 import Layout from "../../Components/Layout"
 import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { ShoppingCartContext } from "../../Context"
 
 
 function SignIn() {
+
+    const context = useContext(ShoppingCartContext)
+    const accountInfo = localStorage.getItem("accountInfoInLocalStorage")
+    const accountInfoParse = JSON.parse(accountInfo)
+    const accountEmail = accountInfoParse.email
+    const accountPassword = accountInfoParse.password
+    
 
     return (
       <Layout>
@@ -22,7 +31,7 @@ function SignIn() {
               >
                   Email:
               </span>
-              <input type="email" name="" id="" />
+              <p>{accountEmail}</p>
             </li>
             <li
               className="flex w-80 justify-start items-center pt-2"  
@@ -32,7 +41,7 @@ function SignIn() {
               >
                 Password
               </span>
-              <input type="password" name="" id="" />
+              <p>{accountPassword}</p>
             </li>
             <button
               className=" w-full border border-black rounded-lg bg-black text-white p-3 mb-4 mt-4"

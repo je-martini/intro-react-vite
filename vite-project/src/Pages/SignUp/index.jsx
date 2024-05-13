@@ -8,6 +8,28 @@ function SignUp() {
 
   const context = useContext(ShoppingCartContext)
 
+  const sendAccountInfo = () => {
+
+      const accountName = document.getElementById("accountName")
+      const accountEmail = document.getElementById("accountEmail")
+      const accountPassword = document.getElementById("accountPassword")
+      
+      const accountInfo = {
+        name: accountName.value,
+        email: accountEmail.value,
+        password: accountPassword.value
+      }
+
+      console.log("accountName : ", accountInfo.name,
+      "accountEmail : ", accountInfo.email,
+      "accountPassword : ", accountInfo.password,
+      "all account : ", accountInfo
+      )
+
+      if(!context.accountInfo){
+        localStorage.setItem("accountInfoInLocalStorage", JSON.stringify(accountInfo))
+      }
+    }
 
     return (
       <Layout>
@@ -29,7 +51,7 @@ function SignUp() {
               </span>
               <input 
                 className="w-full h-8 mt-2 pl-2"
-                type="text" name="" id="accountName" 
+                type="text" name="name" id="accountName" 
               />
             </li>
 
@@ -43,7 +65,7 @@ function SignUp() {
               </span>
               <input 
                 className="w-full h-8 mt-2"
-                type="email" name="" id="accountEmail" 
+                type="email" name="email" id="accountEmail" 
 
               />
             </li>
@@ -57,7 +79,7 @@ function SignUp() {
               </span>
               <input 
                 className="w-full h-8 mt-2"
-                type="password" name="" id="accountPassword" 
+                type="password" name="password" id="accountPassword" 
 
               />
             </li>
@@ -69,7 +91,7 @@ function SignUp() {
             >               
                   
             <button
-              onClick={ () => context.gettingRegistrationInfo("accountName","accountEmail","accountPassword")}
+              onClick={ () => sendAccountInfo()}
             >
               Sign Up
             </button>

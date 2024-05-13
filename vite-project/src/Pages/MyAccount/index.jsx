@@ -3,6 +3,12 @@ import  Layout  from "../../Components/Layout"
 
 function MyAccount() {
 
+    const accountInfo = localStorage.getItem("accountInfoInLocalStorage")
+    const accountInfoParse = JSON.parse(accountInfo)
+    const accountEmail = accountInfoParse.email
+    const accountPassword = accountInfoParse.password
+    const accountName = accountInfoParse.name
+
     return (
       <Layout>
           <ul 
@@ -23,7 +29,7 @@ function MyAccount() {
               <p
                 className=""
               >
-                Account Name 
+                {accountName}
               </p>
               
             </li>
@@ -36,7 +42,7 @@ function MyAccount() {
                 Email
               </p>
               <p>
-                Account Email
+              {accountEmail}
               </p>
             </li>
 

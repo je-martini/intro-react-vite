@@ -31,25 +31,22 @@ const ShoppingCartProvider = ({children}) => {
     const [items, setItems] = useState(null)
     const [filteredItems, setFilteredItems] = useState(null)
 
+    // Get Account Info
+    const accountInfoFromLocalStorage = localStorage.getItem("accountInfoInLocalStorage")
+    let accountInfoParse = undefined
+    
+    if(accountInfoFromLocalStorage){
+        accountInfoParse = JSON.parse(accountInfoFromLocalStorage)
+    } 
+
+    const [ accountInfo, setAccountInfo ] = useState(accountInfoParse)
+
     // Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null)
     
     // Get Products By Category
     const [searchByCategory, setSearchByCategory] = useState(null)
 
-    // Account Info
-    const [accountInfo, setAccountInfo] = useState(null)
-
-    const gettingRegistrationInfo = (accountName, accountEmail, accountPassword ) => {
-        const name = document.getElementById(accountName)
-        const email = document.getElementById(accountEmail)
-        const password = document.getElementById(accountPassword)
-        console.log(
-            "accountName: ", name.value,
-            "accountemail: ", email.value,
-            "accountpassword: ", password.value
-        )
-    }
 
     useEffect( () =>{
         fetch('https://api.escuelajs.co/api/v1/products/')
@@ -115,9 +112,8 @@ const ShoppingCartProvider = ({children}) => {
                 setFilteredItems,
                 searchByCategory, 
                 setSearchByCategory,
-                accountInfo,
-                setAccountInfo,
-                gettingRegistrationInfo
+                accountInfo, 
+                setAccountInfo
             }}
         >
             {children}

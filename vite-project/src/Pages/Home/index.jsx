@@ -7,6 +7,10 @@ import { ShoppingCartContext } from "../../Context"
 function Home() {
   
   const context = useContext(ShoppingCartContext)
+
+  // if(!context.accountInfo){
+  //   console.log('hi')
+  // }
   
   const renderView = () => {
     if(context.filteredItems?.length > 0) {
