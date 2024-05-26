@@ -1,35 +1,40 @@
 import Layout from "../../Components/Layout"
-import { NavLink } from "react-router-dom"
+import { NavLink,  useNavigate} from "react-router-dom"
 import { useContext } from "react"
 import { ShoppingCartContext } from "../../Context"
 
 
-function SignUp() {
 
-  const context = useContext(ShoppingCartContext)
+function SignUp() {
+    const context = useContext(ShoppingCartContext)
+    const navigate = useNavigate()
+
 
   const sendAccountInfo = () => {
 
-      const accountName = document.getElementById("accountName")
-      const accountEmail = document.getElementById("accountEmail")
-      const accountPassword = document.getElementById("accountPassword")
-      
-      const accountInfo = {
-        name: accountName.value,
-        email: accountEmail.value,
-        password: accountPassword.value
-      }
+    context.setisAccountSignIn(true)
 
-      console.log("accountName : ", accountInfo.name,
-      "accountEmail : ", accountInfo.email,
-      "accountPassword : ", accountInfo.password,
-      "all account : ", accountInfo
-      )
+    const currentAccountName = document.getElementById("accountName")
+    const currentAccountEmail = document.getElementById("accountEmail")
+    const currentAccountPassword = document.getElementById("accountPassword")
 
-      if(!context.accountInfo){
-        localStorage.setItem("accountInfoInLocalStorage", JSON.stringify(accountInfo))
-      }
+    const accountInfo = {
+      name: currentAccountName.value,
+      email: currentAccountEmail.value,
+      password: currentAccountPassword.value
     }
+
+    const accountInfoParse = JSON.stringify(accountInfo)
+
+    localStorage.setItem('accountInfoInLocalStorage', accountInfoParse)
+
+    localStorage.setItem('accountSignIn', JSON.stringify(true))
+
+    navigate('/intro-react-vite/')
+
+    location.reload();
+    
+  }
 
     return (
       <Layout>
@@ -86,12 +91,12 @@ function SignUp() {
             
             
             <NavLink
+                onClick={ () => sendAccountInfo()}
                 to='/intro-react-vite/'
                 className="flex justify-center items-center w-full border border-black bg-black text-white rounded-lg  p-3 mb-4 mt-4"
-            >               
+                >               
                   
             <button
-              onClick={ () => sendAccountInfo()}
             >
               Sign Up
             </button>

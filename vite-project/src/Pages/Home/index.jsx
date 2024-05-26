@@ -8,12 +8,13 @@ function Home() {
   
   const context = useContext(ShoppingCartContext)
 
-  // if(!context.accountInfo){
-  //   console.log('hi')
-  // }
-  
   const renderView = () => {
-    if(context.filteredItems?.length > 0) {
+    if(!context.isAccountSignIn){
+      return(
+        <div>Please Do The Log-In </div>  
+      )
+    } else {
+      if(context.filteredItems?.length > 0) {
         return (
           context.filteredItems?.map(item => (
             <Card key={item.id} data={item}/>
@@ -25,6 +26,7 @@ function Home() {
           <div>Sorry by now it's not avalible</div>
         )
       }
+    }
   }
 
   return (

@@ -32,14 +32,12 @@ const ShoppingCartProvider = ({children}) => {
     const [filteredItems, setFilteredItems] = useState(null)
 
     // Get Account Info
-    const accountInfoFromLocalStorage = localStorage.getItem("accountInfoInLocalStorage")
-    let accountInfoParse = undefined
+    const [ accountInfo, setAccountInfo ] = useState(localStorage.getItem("accountInfoInLocalStorage"))
     
-    if(accountInfoFromLocalStorage){
-        accountInfoParse = JSON.parse(accountInfoFromLocalStorage)
-    } 
+    // Sign-In and Sign-Out
 
-    const [ accountInfo, setAccountInfo ] = useState(accountInfoParse)
+    const [ isAccountSignIn, setisAccountSignIn ] = useState(JSON.parse(localStorage.getItem("accountSignIn")))
+    
 
     // Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null)
@@ -113,7 +111,10 @@ const ShoppingCartProvider = ({children}) => {
                 searchByCategory, 
                 setSearchByCategory,
                 accountInfo, 
-                setAccountInfo
+                setAccountInfo,
+                isAccountSignIn,
+                setisAccountSignIn
+                
             }}
         >
             {children}

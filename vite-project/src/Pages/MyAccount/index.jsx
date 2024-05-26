@@ -1,13 +1,24 @@
 import  Layout  from "../../Components/Layout"
-
+import { useContext } from "react"
+import { ShoppingCartContext } from "../../Context"
 
 function MyAccount() {
+  const context = useContext(ShoppingCartContext)
 
-    const accountInfo = localStorage.getItem("accountInfoInLocalStorage")
-    const accountInfoParse = JSON.parse(accountInfo)
-    const accountEmail = accountInfoParse.email
-    const accountPassword = accountInfoParse.password
-    const accountName = accountInfoParse.name
+  let accountInfoParse;
+  let accountEmail;
+  let accountPassword;
+  let accountName;
+
+  
+    
+  if(context.accountInfo) {
+    accountInfoParse = JSON.parse(context.accountInfo)
+    accountEmail = accountInfoParse.email
+    accountPassword = accountInfoParse.password
+    accountName = accountInfoParse.name
+  }
+
 
     return (
       <Layout>
